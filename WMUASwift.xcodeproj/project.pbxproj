@@ -13,6 +13,16 @@
 		1F7067141CAC700300EF8588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7067121CAC700300EF8588 /* Main.storyboard */; };
 		1F7067161CAC700300EF8588 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F7067151CAC700300EF8588 /* Assets.xcassets */; };
 		1F7067191CAC700300EF8588 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7067171CAC700300EF8588 /* LaunchScreen.storyboard */; };
+		1F7067211CAC83F800EF8588 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7067201CAC83F800EF8588 /* FourthViewController.swift */; };
+		1F842A6D1CACAF8300D8381E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F842A6C1CACAF8300D8381E /* MediaPlayer.framework */; };
+		1F842A701CACAFC300D8381E /* RadioStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F842A6F1CACAFC300D8381E /* RadioStation.swift */; };
+		1F842A721CACAFD400D8381E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F842A711CACAFD400D8381E /* Player.swift */; };
+		1F842A741CACB07900D8381E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F842A731CACB07900D8381E /* SwiftyJSON.swift */; };
+		1F842A761CACB6CB00D8381E /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F842A751CACB6CB00D8381E /* ScheduleManager.swift */; };
+		1F842A781CACBDAF00D8381E /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F842A771CACBDAF00D8381E /* ThirdViewController.swift */; };
+		1F842A7A1CACBE2E00D8381E /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F842A791CACBE2E00D8381E /* TableCell.swift */; };
+		1FB690F21CAD80AD00B5DE62 /* PlaysManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB690F11CAD80AD00B5DE62 /* PlaysManager.swift */; };
+		1FB690F41CAD834700B5DE62 /* PlayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB690F31CAD834700B5DE62 /* PlayCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,16 @@
 		1F7067151CAC700300EF8588 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F7067181CAC700300EF8588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F70671A1CAC700300EF8588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F7067201CAC83F800EF8588 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
+		1F842A6C1CACAF8300D8381E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		1F842A6F1CACAFC300D8381E /* RadioStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStation.swift; sourceTree = "<group>"; };
+		1F842A711CACAFD400D8381E /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		1F842A731CACB07900D8381E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		1F842A751CACB6CB00D8381E /* ScheduleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
+		1F842A771CACBDAF00D8381E /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		1F842A791CACBE2E00D8381E /* TableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		1FB690F11CAD80AD00B5DE62 /* PlaysManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaysManager.swift; sourceTree = "<group>"; };
+		1FB690F31CAD834700B5DE62 /* PlayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F842A6D1CACAF8300D8381E /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +61,8 @@
 		1F7067001CAC700300EF8588 = {
 			isa = PBXGroup;
 			children = (
+				1F842A6E1CACAFA200D8381E /* Model */,
+				1F842A6C1CACAF8300D8381E /* MediaPlayer.framework */,
 				1F70670B1CAC700300EF8588 /* WMUASwift */,
 				1F70670A1CAC700300EF8588 /* Products */,
 			);
@@ -58,13 +81,29 @@
 			children = (
 				1F70670C1CAC700300EF8588 /* AppDelegate.swift */,
 				1F70670E1CAC700300EF8588 /* FirstViewController.swift */,
+				1F842A751CACB6CB00D8381E /* ScheduleManager.swift */,
+				1FB690F11CAD80AD00B5DE62 /* PlaysManager.swift */,
 				1F7067101CAC700300EF8588 /* SecondViewController.swift */,
+				1F842A771CACBDAF00D8381E /* ThirdViewController.swift */,
+				1F842A791CACBE2E00D8381E /* TableCell.swift */,
+				1FB690F31CAD834700B5DE62 /* PlayCell.swift */,
+				1F7067201CAC83F800EF8588 /* FourthViewController.swift */,
 				1F7067121CAC700300EF8588 /* Main.storyboard */,
 				1F7067151CAC700300EF8588 /* Assets.xcassets */,
 				1F7067171CAC700300EF8588 /* LaunchScreen.storyboard */,
 				1F70671A1CAC700300EF8588 /* Info.plist */,
 			);
 			path = WMUASwift;
+			sourceTree = "<group>";
+		};
+		1F842A6E1CACAFA200D8381E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F842A6F1CACAFC300D8381E /* RadioStation.swift */,
+				1F842A711CACAFD400D8381E /* Player.swift */,
+				1F842A731CACB07900D8381E /* SwiftyJSON.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,6 +139,11 @@
 					1F7067081CAC700300EF8588 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = QCU35742XU;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -139,9 +183,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FB690F21CAD80AD00B5DE62 /* PlaysManager.swift in Sources */,
+				1F842A7A1CACBE2E00D8381E /* TableCell.swift in Sources */,
+				1F842A761CACB6CB00D8381E /* ScheduleManager.swift in Sources */,
+				1F842A781CACBDAF00D8381E /* ThirdViewController.swift in Sources */,
+				1F7067211CAC83F800EF8588 /* FourthViewController.swift in Sources */,
 				1F7067111CAC700300EF8588 /* SecondViewController.swift in Sources */,
 				1F70670D1CAC700300EF8588 /* AppDelegate.swift in Sources */,
+				1FB690F41CAD834700B5DE62 /* PlayCell.swift in Sources */,
+				1F842A701CACAFC300D8381E /* RadioStation.swift in Sources */,
+				1F842A721CACAFD400D8381E /* Player.swift in Sources */,
 				1F70670F1CAC700300EF8588 /* FirstViewController.swift in Sources */,
+				1F842A741CACB07900D8381E /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,22 +308,28 @@
 		1F70671E1CAC700300EF8588 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = WMUASwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mike.keegan.WMUASwift;
+				PRODUCT_BUNDLE_IDENTIFIER = mike.keegan.WMUA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		1F70671F1CAC700300EF8588 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = WMUASwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mike.keegan.WMUASwift;
+				PRODUCT_BUNDLE_IDENTIFIER = mike.keegan.WMUA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -293,6 +352,7 @@
 				1F70671F1CAC700300EF8588 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
