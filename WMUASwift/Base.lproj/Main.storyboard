@@ -37,20 +37,17 @@
                             <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="wmua-320" translatesAutoresizingMaskIntoConstraints="NO" id="aeu-DB-Gmy">
                                 <rect key="frame" x="0.0" y="231" width="600" height="320"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading DJ name..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mP-w8-JRl">
-                                <rect key="frame" x="134" y="194" width="421" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Loading show name..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jht-AW-WDA">
-                                <rect key="frame" x="134" y="165" width="421" height="21"/>
+                                <rect key="frame" x="138" y="165" width="417" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On Air:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSn-hC-4Zm">
                                 <rect key="frame" x="45" y="165" width="53" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="mbU-M6-Kos"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -76,18 +73,24 @@
                                     <action selector="stopButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="7cM-iU-19l"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading DJ name..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mP-w8-JRl">
+                                <rect key="frame" x="138" y="194" width="417" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Jtk-Hn-5l0" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="BdA-dp-yVn"/>
                             <constraint firstItem="wSn-hC-4Zm" firstAttribute="top" secondItem="rXr-my-lJV" secondAttribute="bottom" constant="8" id="DUR-iu-DrT"/>
+                            <constraint firstItem="0mP-w8-JRl" firstAttribute="centerX" secondItem="jht-AW-WDA" secondAttribute="centerX" id="Duh-cx-L2a"/>
                             <constraint firstItem="aeu-DB-Gmy" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="IKv-ZJ-FmP"/>
                             <constraint firstItem="wSn-hC-4Zm" firstAttribute="top" secondItem="Scr-wu-1wy" secondAttribute="bottom" constant="8" id="Kqe-AV-Dsr"/>
                             <constraint firstItem="Scr-wu-1wy" firstAttribute="top" secondItem="Jtk-Hn-5l0" secondAttribute="bottom" constant="13" id="Lk9-TN-7iJ"/>
                             <constraint firstItem="rXr-my-lJV" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="25" id="NWD-Gv-xS9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0mP-w8-JRl" secondAttribute="trailing" constant="25" id="Nn8-bF-6H6"/>
                             <constraint firstItem="0mP-w8-JRl" firstAttribute="top" secondItem="jht-AW-WDA" secondAttribute="bottom" constant="8" id="OoV-eG-fAZ"/>
-                            <constraint firstItem="0mP-w8-JRl" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="114" id="PZJ-H6-fkC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Scr-wu-1wy" secondAttribute="trailing" constant="25" id="TgC-oC-Yzl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Jtk-Hn-5l0" secondAttribute="trailing" constant="-20" id="UkV-Fg-Kr5"/>
                             <constraint firstItem="Scr-wu-1wy" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="25" id="Y7a-0G-4lH"/>
@@ -97,11 +100,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="jht-AW-WDA" secondAttribute="trailing" constant="25" id="fTN-Cn-hyr"/>
                             <constraint firstItem="Scr-wu-1wy" firstAttribute="top" secondItem="Jtk-Hn-5l0" secondAttribute="bottom" constant="13" id="jka-qd-UxV"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="aeu-DB-Gmy" secondAttribute="bottom" id="oRu-52-jKe"/>
-                            <constraint firstItem="jht-AW-WDA" firstAttribute="leading" secondItem="wSn-hC-4Zm" secondAttribute="trailing" constant="36" id="oV9-WK-fML"/>
                             <constraint firstItem="wSn-hC-4Zm" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="25" id="qkU-Mz-dQf"/>
                             <constraint firstItem="Jtk-Hn-5l0" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="qlQ-Sy-Hrr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rXr-my-lJV" secondAttribute="trailing" constant="25" id="ujB-9J-jn3"/>
                             <constraint firstItem="rXr-my-lJV" firstAttribute="top" secondItem="Jtk-Hn-5l0" secondAttribute="bottom" constant="13" id="vCt-9I-ecP"/>
+                            <constraint firstItem="jht-AW-WDA" firstAttribute="leading" secondItem="wSn-hC-4Zm" secondAttribute="trailing" constant="40" id="zXM-at-4qn"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Now Playing" image="headphones" selectedImage="headphones" id="acW-dT-cKf"/>
