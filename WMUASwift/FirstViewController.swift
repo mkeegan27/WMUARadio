@@ -289,39 +289,49 @@ class FirstViewController: UIViewController {
         
         var showTitle: NSString?
         var DJTitle: NSString?
+        var testForRadioactivityDown: NSString?
         
-        cons.scanUpToString("http://WMUA.radioactivity.fm/show.html?showoid", intoString: nil)
-        cons.scanUpToString(">", intoString: nil)
+        ///show.html?showoid
+        
+        var showN: String;
+        var djN: String;
+        
+        cons.scanUpToString("http://WMUA.radioactivity.fm", intoString: nil)
+        cons.scanUpToString("\">", intoString: &testForRadioactivityDown)
         cons.scanCharactersFromSet(charset, intoString: nil)
         cons.scanUpToString("</a>", intoString: &showTitle)
         cons.scanUpToString("</i>", intoString: nil)
         cons.scanCharactersFromSet(charset, intoString: nil)
         cons.scanUpToString("</td>", intoString: &DJTitle)
         
+        if((testForRadioactivityDown?.isEqualToString("")) != nil){
+            showN = "Radioactivity is down!"
+            djN = "Sorry, please check back later."
+        }
+        else{
+        showN = showTitle!.substringFromIndex(0);
+        djN = "with " + (DJTitle?.substringFromIndex(0))!;
+            showN = showN.stringByReplacingOccurrencesOfString("&#39;", withString: "'");
+            djN = djN.stringByReplacingOccurrencesOfString("&#39;", withString: "'");
+            showN = showN.stringByReplacingOccurrencesOfString("&amp;", withString: "&");
+            djN = djN.stringByReplacingOccurrencesOfString("&amp;", withString: "&");
+        }
+        
         /*
-        //now parse showTitle/DJTitle to see if there are apostrophes or ampersands
-        //need to do this part for both labels and all symbols
-        let apostropheSet: NSCharacterSet = NSCharacterSet(charactersInString: "&#39;");
-        var showRange: NSRange = showTitle!.rangeOfCharacterFromSet(apostropheSet);
-        //print(showRange.length);
-        while(showRange.length != 0){
-            showTitle?.stringByReplacingCharactersInRange(showRange, withString: "'");
-            showRange = showTitle!.rangeOfCharacterFromSet(apostropheSet);
-        }
+         
+         this is source code whe radioactivity is down:
+         
+         <td colspan="2"><a href="http://wmua.radioacivity.fm">Radioactivity Down!</a><br \><i>with</i> Show Info Not Avaiable</td>
+         
+         <td colspan="2"><span id="showinfo">Radioactivity, the site that handles our playlists is currently having some issues.  Check back later!</span></td>
+ 
+         */
         
-        var DJrange: NSRange = DJTitle!.rangeOfCharacterFromSet(apostropheSet);
-        while(DJrange.length != 0){
-            DJTitle?.stringByReplacingCharactersInRange(DJrange, withString: "'");
-            DJrange = DJTitle!.rangeOfCharacterFromSet(apostropheSet)
-        }
- */
-        var showN = showTitle?.substringFromIndex(0);
-        var djN = "with " + (DJTitle?.substringFromIndex(0))!;
+//        else{
+//            showN = "";
+//            djN = "";
+//        }
         
-        showN = showN?.stringByReplacingOccurrencesOfString("&#39;", withString: "'");
-        djN = djN.stringByReplacingOccurrencesOfString("&#39;", withString: "'");
-        showN = showN?.stringByReplacingOccurrencesOfString("&amp;", withString: "&");
-        djN = djN.stringByReplacingOccurrencesOfString("&amp;", withString: "&");
         showLabel.text = showN;
         DJLabel.text = djN;
         
