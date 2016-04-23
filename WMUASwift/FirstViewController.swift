@@ -285,7 +285,7 @@ class FirstViewController: UIViewController {
             print("something's wrong!")
         }
         let cons: NSScanner = NSScanner(string: pageInfo)
-        let charset: NSCharacterSet = NSCharacterSet(charactersInString: "</i>")
+        let charset: NSCharacterSet = NSCharacterSet(charactersInString: "\"</i>")
         
         var showTitle: NSString?
         var DJTitle: NSString?
@@ -296,6 +296,7 @@ class FirstViewController: UIViewController {
         var showN: String;
         var djN: String;
         
+        cons.scanUpToString("td colspan", intoString: nil)
         cons.scanUpToString("http://WMUA.radioactivity.fm", intoString: nil)
         cons.scanUpToString("\">", intoString: &testForRadioactivityDown)
         cons.scanCharactersFromSet(charset, intoString: nil)
@@ -304,7 +305,7 @@ class FirstViewController: UIViewController {
         cons.scanCharactersFromSet(charset, intoString: nil)
         cons.scanUpToString("</td>", intoString: &DJTitle)
         
-        if((testForRadioactivityDown?.isEqualToString("")) != nil){
+        if((testForRadioactivityDown?.isEqualToString("http://wmua.radioactivity.fm")) == nil){
             showN = "Radioactivity is down!"
             djN = "Sorry, please check back later."
         }
@@ -325,6 +326,16 @@ class FirstViewController: UIViewController {
          
          <td colspan="2"><span id="showinfo">Radioactivity, the site that handles our playlists is currently having some issues.  Check back later!</span></td>
  
+         
+         and when it is not:
+         
+         <tr>
+         <td colspan="2"><a href="http://WMUA.radioactivity.fm/show.html?showoid=8618">Let&#39;s Be Blunt with Robert Hunt</a><br \><i>with</i> Robert Hunt</td>
+         
+         <td colspan="2"><span id="showinfo">The show is an eclectic mix of music and talk, mixing music from all different genres with interesting conversations regarding campus life. Each show includes an interview with a guest from an organization around campus, the rest covers a variety of different music. </span></td>
+         
+         </tr>
+         
          */
         
 //        else{
