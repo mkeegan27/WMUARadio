@@ -27,13 +27,13 @@ class TableCell: UITableViewCell {
         //this func not necessary but i'll keep it
     }
 
-    func changeShow(showName: String){
+    func changeShow(_ showName: String){
         showLabel.text = showName
     }
-    func changeDJ(djName: String){
+    func changeDJ(_ djName: String){
         djLabel.text = djName
     }
-    func changeTime(timeName: String){
+    func changeTime(_ timeName: String){
         timeLabel.text = timeName
     }
 }

@@ -32,39 +32,39 @@ class FirstViewController: UIViewController {
         var player: AVPlayer
         init(link: String) {
             self.audioLink = link
-            self.player = AVPlayer(URL: NSURL(string: link)!)
+            self.player = AVPlayer(url: URL(string: link)!)
         }
     }
     var myPlayer = PlayerAv(link: "http://ice7.securenetsystems.net/WMUA?&playSessionID=E6DB23BD-AC18-1366-1EF37CF471BB2F09")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        listenLiveButton.backgroundColor = UIColor.clearColor()
+        listenLiveButton.backgroundColor = UIColor.clear
         listenLiveButton.layer.cornerRadius = 5
         listenLiveButton.layer.borderWidth = 1
-        listenLiveButton.layer.borderColor = UIColor.init(red: 154/255, green: 47/255, blue: 50/255, alpha: 1.0).CGColor
-        stopButton.backgroundColor = UIColor.clearColor()
+        listenLiveButton.layer.borderColor = UIColor.init(red: 154/255, green: 47/255, blue: 50/255, alpha: 1.0).cgColor
+        stopButton.backgroundColor = UIColor.clear
         stopButton.layer.cornerRadius = 5
         stopButton.layer.borderWidth = 1
-        stopButton.layer.borderColor = UIColor.init(red: 154/255, green: 47/255, blue: 50/255, alpha: 1.0).CGColor
+        stopButton.layer.borderColor = UIColor.init(red: 154/255, green: 47/255, blue: 50/255, alpha: 1.0).cgColor
         //setupPlayer()
-        UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
+        UIApplication.shared.beginReceivingRemoteControlEvents()
         
         //2016 SPRING SCHEDULE:
         
         //sunday shows:
-        let show0: show = show(host: "Dr. Mess", name: "The Breakdown Shakedown", day: "Sunday", time: "Midnight - 2am")
-        let show1: show = show(host: "Julia Galunova", name: "All About The Bass", day: "Sunday", time: "2am - 4am")
-        let show2: show = show(host: "Teagan McStay", name: "Paper This City", day: "Sunday", time: "4am - 6am")
-        let show3: show = show(host: "Ryan Arnold and James Coyle", name: "Magic Pig Detective", day: "Sunday", time: "6am - 8am")
-        let show4: show = show(host: "Helen Curtin", name: "Polka Celebration", day: "Sunday", time: "8am - 10am")
-        let show5: show = show(host: "Todd Zaganiacz", name: "Polka Carousel", day: "Sunday", time: "10am - noon")
-        let show6: show = show(host: "Mad Matt", name: "Grand Theft Audio", day: "Sunday", time: "noon - 2pm")
-        let show7: show = show(host: "DJ Tommmy Fooch", name: "Automatic Stop", day: "Sunday", time: "2pm - 4pm")
-        let show8: show = show(host: "Michael Hagerty", name: "good kid, s.A.A.d city", day: "Sunday", time: "4pm - 6pm")
-        let show9: show = show(host: "DJ Shifty Disks", name: "Freelance Poetry", day: "Sunday", time: "6pm - 8pm")
-        let show10: show = show(host: "Ethan Sennett", name: "A to Zed", day: "Sunday", time: "8pm - 10pm")
-        let show11: show = show(host: "Fred", name: "Mellifluous Sounds", day: "Sunday", time: "10pm - midnight")
+        let show0: Show = Show(host: "Dr. Mess", name: "The Breakdown Shakedown", day: "Sunday", time: "Midnight - 2am")
+        let show1: Show = Show(host: "Julia Galunova", name: "All About The Bass", day: "Sunday", time: "2am - 4am")
+        let show2: Show = Show(host: "Teagan McStay", name: "Paper This City", day: "Sunday", time: "4am - 6am")
+        let show3: Show = Show(host: "Ryan Arnold and James Coyle", name: "Magic Pig Detective", day: "Sunday", time: "6am - 8am")
+        let show4: Show = Show(host: "Helen Curtin", name: "Polka Celebration", day: "Sunday", time: "8am - 10am")
+        let show5: Show = Show(host: "Todd Zaganiacz", name: "Polka Carousel", day: "Sunday", time: "10am - noon")
+        let show6: Show = Show(host: "Mad Matt", name: "Grand Theft Audio", day: "Sunday", time: "noon - 2pm")
+        let show7: Show = Show(host: "DJ Tommmy Fooch", name: "Automatic Stop", day: "Sunday", time: "2pm - 4pm")
+        let show8: Show = Show(host: "Michael Hagerty", name: "good kid, s.A.A.d city", day: "Sunday", time: "4pm - 6pm")
+        let show9: Show = Show(host: "DJ Shifty Disks", name: "Freelance Poetry", day: "Sunday", time: "6pm - 8pm")
+        let show10: Show = Show(host: "Ethan Sennett", name: "A to Zed", day: "Sunday", time: "8pm - 10pm")
+        let show11: Show = Show(host: "Fred", name: "Mellifluous Sounds", day: "Sunday", time: "10pm - midnight")
         
             schedMgrSun.addS(show0)
             schedMgrSun.addS(show1)
@@ -80,20 +80,20 @@ class FirstViewController: UIViewController {
             schedMgrSun.addS(show11)
         
         //monday shows:
-        let show12: show = show(host: "Kaiser", name: "The Butter Block", day: "Monday", time: "Midnight - 2am")
-        let show13: show = show(host: "Satya G", name: "Stacked", day: "Monday", time: "2am - 4am")
-        let show14: show = show(host: "Peter Hurley", name: "The Sp3ctrum", day: "Monday", time: "4am - 6am")
-        let show15: show = show(host: "Morgan Hughes", name: "Life In Waves", day: "Monday", time: "6am - 8am")
-        let show16: show = show(host: "Syndicated", name: "DEMOCRACY NOW!", day: "Monday", time: "8am - 9am")
-        let show17: show = show(host: "DJ Diego", name: "The Latin Hour", day: "Monday", time: "9am - 11am")
-        let show18: show = show(host: "DJ Waffleonia", name: "Brunch", day: "Monday", time: "11am - 12:30pm")
-        let show19: show = show(host: "Kaelan", name: "People's Instinctive Travels", day: "Monday", time: "12:30pm - 2:30pm")
-        let show20: show = show(host: "Misha", name: "State of the Tune-In", day: "Monday", time: "2:30pm - 4:30pm")
-        let show21: show = show(host: "Alex Levitt", name: "SPORTSLINE", day: "Monday", time: "4:30pm - 5:30pm")
-        let show22: show = show(host: "WMUA", name: "WMUA News", day: "Monday", time: "5:30pm - 6pm")
-        let show23: show = show(host: "DJ Millzy", name: "Rock & Roll Fight Club", day: "Monday", time: "6pm - 8pm")
-        let show24: show = show(host: "Ken", name: "Wiggly World", day: "Monday", time: "8pm - 10pm")
-        let show25: show = show(host: "Mike Crawford", name: "Requisite Lazer Sound", day: "Monday", time: "10pm - midnight")
+        let show12: Show = Show(host: "Kaiser", name: "The Butter Block", day: "Monday", time: "Midnight - 2am")
+        let show13: Show = Show(host: "Satya G", name: "Stacked", day: "Monday", time: "2am - 4am")
+        let show14: Show = Show(host: "Peter Hurley", name: "The Sp3ctrum", day: "Monday", time: "4am - 6am")
+        let show15: Show = Show(host: "Morgan Hughes", name: "Life In Waves", day: "Monday", time: "6am - 8am")
+        let show16: Show = Show(host: "Syndicated", name: "DEMOCRACY NOW!", day: "Monday", time: "8am - 9am")
+        let show17: Show = Show(host: "DJ Diego", name: "The Latin Hour", day: "Monday", time: "9am - 11am")
+        let show18: Show = Show(host: "DJ Waffleonia", name: "Brunch", day: "Monday", time: "11am - 12:30pm")
+        let show19: Show = Show(host: "Kaelan", name: "People's Instinctive Travels", day: "Monday", time: "12:30pm - 2:30pm")
+        let show20: Show = Show(host: "Misha", name: "State of the Tune-In", day: "Monday", time: "2:30pm - 4:30pm")
+        let show21: Show = Show(host: "Alex Levitt", name: "SPORTSLINE", day: "Monday", time: "4:30pm - 5:30pm")
+        let show22: Show = Show(host: "WMUA", name: "WMUA News", day: "Monday", time: "5:30pm - 6pm")
+        let show23: Show = Show(host: "DJ Millzy", name: "Rock & Roll Fight Club", day: "Monday", time: "6pm - 8pm")
+        let show24: Show = Show(host: "Ken", name: "Wiggly World", day: "Monday", time: "8pm - 10pm")
+        let show25: Show = Show(host: "Mike Crawford", name: "Requisite Lazer Sound", day: "Monday", time: "10pm - midnight")
         
         schedMgrMon.addS(show12)
         schedMgrMon.addS(show13)
@@ -111,21 +111,21 @@ class FirstViewController: UIViewController {
         schedMgrMon.addS(show25)
         
         //tuesday shows:
-        let show26: show = show(host: "cheeto dust", name: "The Midnight Plimf", day: "Tuesday", time: "Midnight - 2am")
-        let show27: show = show(host: "Conor", name: "Conor's Corner", day: "Tuesday", time: "2am - 4am")
-        let show28: show = show(host: "Various DJ's", name: "NEW 2 WMUA", day: "Tuesday", time: "4am - 6am")
-        let show29: show = show(host: "DJ Rick", name: "And Now For Something Completely Different", day: "Tuesday", time: "6am - 8am")
-        let show30: show = show(host: "Syndicated", name: "DEMOCRACY NOW!", day: "Tuesday", time: "8am - 9am")
-        let show31: show = show(host: "Grantith Mac", name: "Circular Breathing", day: "Tuesday", time: "9am - 11am")
-        let show32: show = show(host: "Monica Curtin", name: "SunDrenched", day: "Tuesday", time: "11am - 12:30pm")
-        let show33: show = show(host: "Lucy", name: "Chere Sputnik", day: "Tuesday", time: "12:30pm - 2:30pm")
-        let show34: show = show(host: "DJ Moonbeam", name: "Afternoon Snack", day: "Tuesday", time: "2:30pm - 4:30pm")
-        let show35: show = show(host: "Bob Reiser", name: "Chin Music", day: "Tuesday", time: "4:30pm - 5pm")
-        let show36: show = show(host: "Daisy Mathias", name: "Poetry A La Carte", day: "Tuesday", time: "5pm - 5:30pm")
-        let show37: show = show(host: "WMUA", name: "WMUA News", day: "Tuesday", time: "5:30pm - 6pm")
-        let show38: show = show(host: "Lewis", name: "Rhythm and Bass", day: "Tuesday", time: "6pm - 8pm")
-        let show39: show = show(host: "DJ Sarah D", name: "Sound of Siver", day: "Tuesday", time: "8pm - 10pm")
-        let show40: show = show(host: "DJ de soto", name: "Projecting Monsters on the Wall", day: "Tuesday", time: "10pm - midnight")
+        let show26: Show = Show(host: "cheeto dust", name: "The Midnight Plimf", day: "Tuesday", time: "Midnight - 2am")
+        let show27: Show = Show(host: "Conor", name: "Conor's Corner", day: "Tuesday", time: "2am - 4am")
+        let show28: Show = Show(host: "Various DJ's", name: "NEW 2 WMUA", day: "Tuesday", time: "4am - 6am")
+        let show29: Show = Show(host: "DJ Rick", name: "And Now For Something Completely Different", day: "Tuesday", time: "6am - 8am")
+        let show30: Show = Show(host: "Syndicated", name: "DEMOCRACY NOW!", day: "Tuesday", time: "8am - 9am")
+        let show31: Show = Show(host: "Grantith Mac", name: "Circular Breathing", day: "Tuesday", time: "9am - 11am")
+        let show32: Show = Show(host: "Monica Curtin", name: "SunDrenched", day: "Tuesday", time: "11am - 12:30pm")
+        let show33: Show = Show(host: "Lucy", name: "Chere Sputnik", day: "Tuesday", time: "12:30pm - 2:30pm")
+        let show34: Show = Show(host: "DJ Moonbeam", name: "Afternoon Snack", day: "Tuesday", time: "2:30pm - 4:30pm")
+        let show35: Show = Show(host: "Bob Reiser", name: "Chin Music", day: "Tuesday", time: "4:30pm - 5pm")
+        let show36: Show = Show(host: "Daisy Mathias", name: "Poetry A La Carte", day: "Tuesday", time: "5pm - 5:30pm")
+        let show37: Show = Show(host: "WMUA", name: "WMUA News", day: "Tuesday", time: "5:30pm - 6pm")
+        let show38: Show = Show(host: "Lewis", name: "Rhythm and Bass", day: "Tuesday", time: "6pm - 8pm")
+        let show39: Show = Show(host: "DJ Sarah D", name: "Sound of Siver", day: "Tuesday", time: "8pm - 10pm")
+        let show40: Show = Show(host: "DJ de soto", name: "Projecting Monsters on the Wall", day: "Tuesday", time: "10pm - midnight")
         
         schedMgrTues.addS(show26)
         schedMgrTues.addS(show27)
@@ -144,20 +144,20 @@ class FirstViewController: UIViewController {
         schedMgrTues.addS(show40)
         
         //wednesday shows:
-        let show41: show = show(host: "DJ Scandaluz", name: "Midnight Scandals", day: "Wednesday", time: "Midnight - 2am")
-        let show42: show = show(host: "Emily Tiedtke", name: "etc.", day: "Wednesday", time: "2am - 4am")
-        let show43: show = show(host: "Doktor Ugs", name: "ChatterBox", day: "Wednesday", time: "4am - 6am")
-        let show44: show = show(host: "Alex Gogol", name: "Not Another Indie Show", day: "Wednesday", time: "6am - 8am")
-        let show45: show = show(host: "Syndicated", name: "DEMOCRACY NOW!", day: "Wednesday", time: "8am - 9am")
-        let show46: show = show(host: "Dave Van Iderstine", name: "The Last Resort", day: "Wednesday", time: "9am - 11am")
-        let show47: show = show(host: "PLAYER 1", name: "A+B+START", day: "Wednesday", time: "11am - 12:30pm")
-        let show48: show = show(host: "Liam Byrne", name: "Celtic Rock and Talk", day: "Wednesday", time: "12:30pm - 2:30pm")
-        let show49: show = show(host: "DJ ANJ", name: "The Electric Beach", day: "Wednesday", time: "2:30pm - 4:30pm")
-        let show50: show = show(host: "Matthew Lieberman", name: "Hump Day Sports", day: "Wednesday", time: "4:30pm - 5:30pm")
-        let show51: show = show(host: "WMUA", name: "WMUA News", day: "Wednesday", time: "5:30pm - 6pm")
-        let show52: show = show(host: "The DJs formerly known as Dan and Morgan", name: "Cassettes on the Dash", day: "Wednesday", time: "6pm - 8pm")
-        let show53: show = show(host: "Carlie", name: "Good Vibrations", day: "Wednesday", time: "8pm - 10pm")
-        let show54: show = show(host: "Mike", name: "MoMA", day: "Wednesday", time: "10pm - midnight")
+        let show41: Show = Show(host: "DJ Scandaluz", name: "Midnight Scandals", day: "Wednesday", time: "Midnight - 2am")
+        let show42: Show = Show(host: "Emily Tiedtke", name: "etc.", day: "Wednesday", time: "2am - 4am")
+        let show43: Show = Show(host: "Doktor Ugs", name: "ChatterBox", day: "Wednesday", time: "4am - 6am")
+        let show44: Show = Show(host: "Alex Gogol", name: "Not Another Indie Show", day: "Wednesday", time: "6am - 8am")
+        let show45: Show = Show(host: "Syndicated", name: "DEMOCRACY NOW!", day: "Wednesday", time: "8am - 9am")
+        let show46: Show = Show(host: "Dave Van Iderstine", name: "The Last Resort", day: "Wednesday", time: "9am - 11am")
+        let show47: Show = Show(host: "PLAYER 1", name: "A+B+START", day: "Wednesday", time: "11am - 12:30pm")
+        let show48: Show = Show(host: "Liam Byrne", name: "Celtic Rock and Talk", day: "Wednesday", time: "12:30pm - 2:30pm")
+        let show49: Show = Show(host: "DJ ANJ", name: "The Electric Beach", day: "Wednesday", time: "2:30pm - 4:30pm")
+        let show50: Show = Show(host: "Matthew Lieberman", name: "Hump Day Sports", day: "Wednesday", time: "4:30pm - 5:30pm")
+        let show51: Show = Show(host: "WMUA", name: "WMUA News", day: "Wednesday", time: "5:30pm - 6pm")
+        let show52: Show = Show(host: "The DJs formerly known as Dan and Morgan", name: "Cassettes on the Dash", day: "Wednesday", time: "6pm - 8pm")
+        let show53: Show = Show(host: "Carlie", name: "Good Vibrations", day: "Wednesday", time: "8pm - 10pm")
+        let show54: Show = Show(host: "Mike", name: "MoMA", day: "Wednesday", time: "10pm - midnight")
         
         schedMgrWed.addS(show41)
         schedMgrWed.addS(show42)
@@ -175,20 +175,20 @@ class FirstViewController: UIViewController {
         schedMgrWed.addS(show54)
         
         //thursday shows:
-        let show55: show = show(host: "Jasper", name: "no half guessing", day: "Thursday", time: "Midnight - 2am")
-        let show56: show = show(host: "DJ Fan & DJ Liv", name: "Somethin' 4 The Soul", day: "Thursday", time: "2am - 4am")
-        let show57: show = show(host: "DJ Hammernose", name: "Won't Be Pathetic Forever", day: "Thursday", time: "4am - 6am")
-        let show58: show = show(host: "Troy Ko", name: "Pop Pop Positive", day: "Thursday", time: "6am - 8am")
-        let show59: show = show(host: "Syndicated", name: "DEMOCRACY NOW!", day: "Thursday", time: "8am - 9am")
-        let show60: show = show(host: "Mitch Bordage", name: "Speakeasy", day: "Thursday", time: "9am - 11am")
-        let show61: show = show(host: "Patricia", name: "Of Space and Time", day: "Thursday", time: "11am - 12:30pm")
-        let show62: show = show(host: "Peter Mcquillan", name: "Age of Exploration", day: "Thursday", time: "12:30pm - 2:30pm")
-        let show63: show = show(host: "Katie Wright", name: "Thursday's Rhythm & Blues Revue", day: "Thursday", time: "2:30pm - 4:30pm")
-        let show64: show = show(host: "Pio and Chelsie", name: "The Hour of Power", day: "Thursday", time: "4:30pm - 5:30pm")
-        let show65: show = show(host: "WMUA", name: "WMUA News", day: "Thursday", time: "5:30pm - 6pm")
-        let show66: show = show(host: "lil kisses", name: "the vo / d", day: "Thursday", time: "6pm - 8pm")
-        let show67: show = show(host: "Mike Campbell", name: "Fuzz N Grime", day: "Thursday", time: "8pm - 10pm")
-        let show68: show = show(host: "SAD RAD DAD", name: "Fearful Assymetry", day: "Thursday", time: "10pm - midnight")
+        let show55: Show = Show(host: "Jasper", name: "no half guessing", day: "Thursday", time: "Midnight - 2am")
+        let show56: Show = Show(host: "DJ Fan & DJ Liv", name: "Somethin' 4 The Soul", day: "Thursday", time: "2am - 4am")
+        let show57: Show = Show(host: "DJ Hammernose", name: "Won't Be Pathetic Forever", day: "Thursday", time: "4am - 6am")
+        let show58: Show = Show(host: "Troy Ko", name: "Pop Pop Positive", day: "Thursday", time: "6am - 8am")
+        let show59: Show = Show(host: "Syndicated", name: "DEMOCRACY NOW!", day: "Thursday", time: "8am - 9am")
+        let show60: Show = Show(host: "Mitch Bordage", name: "Speakeasy", day: "Thursday", time: "9am - 11am")
+        let show61: Show = Show(host: "Patricia", name: "Of Space and Time", day: "Thursday", time: "11am - 12:30pm")
+        let show62: Show = Show(host: "Peter Mcquillan", name: "Age of Exploration", day: "Thursday", time: "12:30pm - 2:30pm")
+        let show63: Show = Show(host: "Katie Wright", name: "Thursday's Rhythm & Blues Revue", day: "Thursday", time: "2:30pm - 4:30pm")
+        let show64: Show = Show(host: "Pio and Chelsie", name: "The Hour of Power", day: "Thursday", time: "4:30pm - 5:30pm")
+        let show65: Show = Show(host: "WMUA", name: "WMUA News", day: "Thursday", time: "5:30pm - 6pm")
+        let show66: Show = Show(host: "lil kisses", name: "the vo / d", day: "Thursday", time: "6pm - 8pm")
+        let show67: Show = Show(host: "Mike Campbell", name: "Fuzz N Grime", day: "Thursday", time: "8pm - 10pm")
+        let show68: Show = Show(host: "SAD RAD DAD", name: "Fearful Assymetry", day: "Thursday", time: "10pm - midnight")
         
         schedMgrThurs.addS(show55)
         schedMgrThurs.addS(show56)
@@ -206,20 +206,20 @@ class FirstViewController: UIViewController {
         schedMgrThurs.addS(show68)
 
         //friday shows:
-        let show69: show = show(host: "Kristen Mary", name: "Gravity X", day: "Friday", time: "Midnight - 2am")
-        let show70: show = show(host: "Steven Bowe", name: "The 93 Report", day: "Friday", time: "2am - 4am")
-        let show71: show = show(host: "J-Ho", name: "Movie News", day: "Friday", time: "4am - 6am")
-        let show72: show = show(host: "Brenna McIntyre", name: "Turbulence", day: "Friday", time: "6am - 8am")
-        let show73: show = show(host: "Syndicated", name: "DEMOCRACY NOW!", day: "Friday", time: "8am - 9am")
-        let show74: show = show(host: "DJ Specs", name: "Sonic Metro", day: "Friday", time: "9am - 11am")
-        let show75: show = show(host: "DJ CHAR JELLY", name: "Char Jelly and the Jams", day: "Friday", time: "11am - 12:30pm")
-        let show76: show = show(host: "DJ Hao Pengyou", name: "Yinyue Shijian", day: "Friday", time: "12:30pm - 2:30pm")
-        let show77: show = show(host: "Ramblin' Blind Josh Pearson and Offbeat Erik", name: "Midnight Honey from the Diamond Mine", day: "Friday", time: "2:30pm - 4:30pm")
-        let show78: show = show(host: "Josh", name: "The Third World", day: "Friday", time: "4:30pm - 5:30pm")
-        let show79: show = show(host: "WMUA", name: "WMUA News", day: "Friday", time: "5:30pm - 6pm")
-        let show80: show = show(host: "Chris & Rec", name: "TRGGR Radio", day: "Friday", time: "6pm - 8pm")
-        let show81: show = show(host: "Aidan", name: "Garage Door", day: "Friday", time: "8pm - 10pm")
-        let show82: show = show(host: "DJ Marky Marko", name: "Fresh Produce", day: "Friday", time: "10pm - midnight")
+        let show69: Show = Show(host: "Kristen Mary", name: "Gravity X", day: "Friday", time: "Midnight - 2am")
+        let show70: Show = Show(host: "Steven Bowe", name: "The 93 Report", day: "Friday", time: "2am - 4am")
+        let show71: Show = Show(host: "J-Ho", name: "Movie News", day: "Friday", time: "4am - 6am")
+        let show72: Show = Show(host: "Brenna McIntyre", name: "Turbulence", day: "Friday", time: "6am - 8am")
+        let show73: Show = Show(host: "Syndicated", name: "DEMOCRACY NOW!", day: "Friday", time: "8am - 9am")
+        let show74: Show = Show(host: "DJ Specs", name: "Sonic Metro", day: "Friday", time: "9am - 11am")
+        let show75: Show = Show(host: "DJ CHAR JELLY", name: "Char Jelly and the Jams", day: "Friday", time: "11am - 12:30pm")
+        let show76: Show = Show(host: "DJ Hao Pengyou", name: "Yinyue Shijian", day: "Friday", time: "12:30pm - 2:30pm")
+        let show77: Show = Show(host: "Ramblin' Blind Josh Pearson and Offbeat Erik", name: "Midnight Honey from the Diamond Mine", day: "Friday", time: "2:30pm - 4:30pm")
+        let show78: Show = Show(host: "Josh", name: "The Third World", day: "Friday", time: "4:30pm - 5:30pm")
+        let show79: Show = Show(host: "WMUA", name: "WMUA News", day: "Friday", time: "5:30pm - 6pm")
+        let show80: Show = Show(host: "Chris & Rec", name: "TRGGR Radio", day: "Friday", time: "6pm - 8pm")
+        let show81: Show = Show(host: "Aidan", name: "Garage Door", day: "Friday", time: "8pm - 10pm")
+        let show82: Show = Show(host: "DJ Marky Marko", name: "Fresh Produce", day: "Friday", time: "10pm - midnight")
         
         schedMgrFri.addS(show69)
         schedMgrFri.addS(show70)
@@ -237,18 +237,18 @@ class FirstViewController: UIViewController {
         schedMgrFri.addS(show82)
         
         //saturday shows:
-        let show83: show = show(host: "Tactik and Drift", name: "Synaesthesia", day: "Saturday", time: "Midnight - 2am")
-        let show84: show = show(host: "Stevie G", name: "The Weather Report", day: "Saturday", time: "2am - 4am")
-        let show85: show = show(host: "Liam O'Connor", name: "The Aux Cord", day: "Saturday", time: "4am - 6am")
-        let show86: show = show(host: "Brooke, Janna, and Cate", name: "Jamherst", day: "Saturday", time: "6am - 8am")
-        let show87: show = show(host: "DJ Astro", name: "Open Mind Radio", day: "Saturday", time: "8am - 10am")
-        let show88: show = show(host: "Annelise and Kara", name: "Anything But Country", day: "Saturday", time: "10am - noon")
-        let show89: show = show(host: "Robert Hunt", name: "Let's Be Blunt", day: "Saturday", time: "noon - 2pm")
-        let show90: show = show(host: "DJ Wallaruss", name: "A Thoroughly Modern Lily", day: "Saturday", time: "2pm - 4pm")
-        let show91: show = show(host: "DJ Annie Day", name: "CTRL+ALT+DEL", day: "Saturday", time: "4pm - 6pm")
-        let show92: show = show(host: "DJ Trashcan", name: "Just Garbage", day: "Saturday", time: "6pm - 8pm")
-        let show93: show = show(host: "Tariq & Tarik", name: "Temperatures Rising", day: "Saturday", time: "8pm - 10pm")
-        let show94: show = show(host: "John Anderson", name: "Stitched Up", day: "Saturday", time: "10pm - midnight")
+        let show83: Show = Show(host: "Tactik and Drift", name: "Synaesthesia", day: "Saturday", time: "Midnight - 2am")
+        let show84: Show = Show(host: "Stevie G", name: "The Weather Report", day: "Saturday", time: "2am - 4am")
+        let show85: Show = Show(host: "Liam O'Connor", name: "The Aux Cord", day: "Saturday", time: "4am - 6am")
+        let show86: Show = Show(host: "Brooke, Janna, and Cate", name: "Jamherst", day: "Saturday", time: "6am - 8am")
+        let show87: Show = Show(host: "DJ Astro", name: "Open Mind Radio", day: "Saturday", time: "8am - 10am")
+        let show88: Show = Show(host: "Annelise and Kara", name: "Anything But Country", day: "Saturday", time: "10am - noon")
+        let show89: Show = Show(host: "Robert Hunt", name: "Let's Be Blunt", day: "Saturday", time: "noon - 2pm")
+        let show90: Show = Show(host: "DJ Wallaruss", name: "A Thoroughly Modern Lily", day: "Saturday", time: "2pm - 4pm")
+        let show91: Show = Show(host: "DJ Annie Day", name: "CTRL+ALT+DEL", day: "Saturday", time: "4pm - 6pm")
+        let show92: Show = Show(host: "DJ Trashcan", name: "Just Garbage", day: "Saturday", time: "6pm - 8pm")
+        let show93: Show = Show(host: "Tariq & Tarik", name: "Temperatures Rising", day: "Saturday", time: "8pm - 10pm")
+        let show94: Show = Show(host: "John Anderson", name: "Stitched Up", day: "Saturday", time: "10pm - midnight")
         
         schedMgrSat.addS(show83)
         schedMgrSat.addS(show84)
@@ -274,18 +274,18 @@ class FirstViewController: UIViewController {
         //this is where I scan the information from the website HTML
         //if the code of the website changes, this will break
         let myURLString = "http://www.wmua.org"
-        guard let myURL = NSURL(string: myURLString) else {
+        guard let myURL = URL(string: myURLString) else {
             print("Error: \(myURLString) doesn't seem to be a valid URL")
             return
         }
         var pageInfo: String = "something's wrong, but not caught";
         do{
-            pageInfo = try String(contentsOfURL: myURL)
+            pageInfo = try String(contentsOf: myURL)
         }catch{
             print("something's wrong!")
         }
-        let cons: NSScanner = NSScanner(string: pageInfo)
-        let charset: NSCharacterSet = NSCharacterSet(charactersInString: "\"</i>")
+        let cons: Scanner = Scanner(string: pageInfo)
+        let charset: CharacterSet = CharacterSet(charactersIn: "\"</i>")
         
         var showTitle: NSString?
         var DJTitle: NSString?
@@ -296,26 +296,26 @@ class FirstViewController: UIViewController {
         var showN: String;
         var djN: String;
         
-        cons.scanUpToString("td colspan", intoString: nil)
-        cons.scanUpToString("http://WMUA.radioactivity.fm", intoString: nil)
-        cons.scanUpToString("\">", intoString: &testForRadioactivityDown)
-        cons.scanCharactersFromSet(charset, intoString: nil)
-        cons.scanUpToString("</a>", intoString: &showTitle)
-        cons.scanUpToString("</i>", intoString: nil)
-        cons.scanCharactersFromSet(charset, intoString: nil)
-        cons.scanUpToString("</td>", intoString: &DJTitle)
+        cons.scanUpTo("td colspan", into: nil)
+        cons.scanUpTo("http://WMUA.radioactivity.fm", into: nil)
+        cons.scanUpTo("\">", into: &testForRadioactivityDown)
+        cons.scanCharacters(from: charset, into: nil)
+        cons.scanUpTo("</a>", into: &showTitle)
+        cons.scanUpTo("</i>", into: nil)
+        cons.scanCharacters(from: charset, into: nil)
+        cons.scanUpTo("</td>", into: &DJTitle)
         
-        if((testForRadioactivityDown?.isEqualToString("http://wmua.radioactivity.fm")) == nil){
+        if((testForRadioactivityDown?.isEqual(to: "http://wmua.radioactivity.fm")) == nil){
             showN = "Radioactivity is down!"
             djN = "Sorry, please check back later."
         }
         else{
-        showN = showTitle!.substringFromIndex(0);
-        djN = "with " + (DJTitle?.substringFromIndex(0))!;
-            showN = showN.stringByReplacingOccurrencesOfString("&#39;", withString: "'");
-            djN = djN.stringByReplacingOccurrencesOfString("&#39;", withString: "'");
-            showN = showN.stringByReplacingOccurrencesOfString("&amp;", withString: "&");
-            djN = djN.stringByReplacingOccurrencesOfString("&amp;", withString: "&");
+        showN = showTitle!.substring(from: 0);
+        djN = "with " + (DJTitle?.substring(from: 0))!;
+            showN = showN.replacingOccurrences(of: "&#39;", with: "'");
+            djN = djN.replacingOccurrences(of: "&#39;", with: "'");
+            showN = showN.replacingOccurrences(of: "&amp;", with: "&");
+            djN = djN.replacingOccurrences(of: "&amp;", with: "&");
         }
         
         /*
@@ -348,7 +348,7 @@ class FirstViewController: UIViewController {
         
     }
 
-    @IBAction func refreshPressed(sender: UIBarButtonItem) {
+    @IBAction func refreshPressed(_ sender: UIBarButtonItem) {
         updateLabels()
         //do I need to reload the view?
     }
@@ -357,7 +357,7 @@ class FirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func playButtonPressed(sender: UIButton) {
+    @IBAction func playButtonPressed(_ sender: UIButton) {
         startPlaying()
         
     }
@@ -376,41 +376,41 @@ class FirstViewController: UIViewController {
             // print(error.localizedDescription)
         }
         do{
-            try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker)
+            try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
             
         }catch _ as NSError{}
         
         myPlayer.player.play()
         
-        listenLiveButton.hidden = true
-        stopButton.hidden = false
+        listenLiveButton.isHidden = true
+        stopButton.isHidden = false
     }
     
-    @IBAction func stopButtonPressed(sender: UIButton) {
+    @IBAction func stopButtonPressed(_ sender: UIButton) {
         stopPlaying()
         
     }
     
     func stopPlaying(){
         myPlayer.player.pause()
-        stopButton.hidden = true
-        listenLiveButton.hidden = false
+        stopButton.isHidden = true
+        listenLiveButton.isHidden = false
     }
     
-    override func remoteControlReceivedWithEvent(event: UIEvent?) { // *
+    override func remoteControlReceived(with event: UIEvent?) { // *
         let rc = event!.subtype
         //let p = myPlayer.player
         //print("received remote control \(rc.rawValue)") // 101 = pause, 100 = play
         switch rc {
-        case .RemoteControlTogglePlayPause:
+        case .remoteControlTogglePlayPause:
             if playing {
                 stopPlaying()
             } else {
                 startPlaying()
             }
-        case .RemoteControlPlay:
+        case .remoteControlPlay:
             startPlaying()
-        case .RemoteControlPause:
+        case .remoteControlPause:
             stopPlaying()
         default:break
         }

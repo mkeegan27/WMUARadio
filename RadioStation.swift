@@ -49,7 +49,7 @@ class RadioStation: NSObject {
     // MARK: - JSON Parsing into object
     //*****************************************************************
     
-    class func parseStation(stationJSON: JSON) -> (RadioStation) {
+    class func parseStation(_ stationJSON: JSON) -> (RadioStation) {
         
         let name      = stationJSON["name"].string ?? ""
         let streamURL = stationJSON["streamURL"].string ?? ""

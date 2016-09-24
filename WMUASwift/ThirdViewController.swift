@@ -31,7 +31,7 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func segmentChanged(sender: UISegmentedControl) {
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         if(daysOfWeek.selectedSegmentIndex == 0){
             selInd = 0
         }
@@ -56,7 +56,7 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tblView.reloadData()
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         var ret: Int = 0
         
@@ -85,30 +85,30 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return ret
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("TableCell", forIndexPath: indexPath) as! TableCell
-        var tasker: show = schedMgrSun.shows[0];
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell", for: indexPath) as! TableCell
+        var tasker: Show = schedMgrSun.shows[0];
         if(selInd == 0){
-            tasker = schedMgrSun.shows[indexPath.row]
+            tasker = schedMgrSun.shows[(indexPath as NSIndexPath).row]
         }
         else if(selInd == 1){
-            tasker = schedMgrMon.shows[indexPath.row]
+            tasker = schedMgrMon.shows[(indexPath as NSIndexPath).row]
         }
         else if(selInd == 2){
-            tasker = schedMgrTues.shows[indexPath.row]
+            tasker = schedMgrTues.shows[(indexPath as NSIndexPath).row]
         }
         else if(selInd == 3){
-            tasker = schedMgrWed.shows[indexPath.row]
+            tasker = schedMgrWed.shows[(indexPath as NSIndexPath).row]
         }
         else if(selInd == 4){
-            tasker = schedMgrThurs.shows[indexPath.row]
+            tasker = schedMgrThurs.shows[(indexPath as NSIndexPath).row]
         }
         else if(selInd == 5){
-            tasker = schedMgrFri.shows[indexPath.row]
+            tasker = schedMgrFri.shows[(indexPath as NSIndexPath).row]
         }
         else if(selInd == 6){
-            tasker = schedMgrSat.shows[indexPath.row]
+            tasker = schedMgrSat.shows[(indexPath as NSIndexPath).row]
         }
         
         cell.changeShow(tasker.name)
@@ -119,7 +119,7 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
     

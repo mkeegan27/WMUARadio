@@ -23,7 +23,7 @@ struct play{
 class PlaysManager: NSObject{
     var plays = [play]()
     
-    func addP(newPlay: play){
+    func addP(_ newPlay: play){
         plays.append(newPlay)
     }
     

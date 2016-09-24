@@ -26,16 +26,16 @@ class PlayCell: UITableViewCell {
         //this func not necessary but i'll keep it
     }
     
-    func changeSong(songName: String){
+    func changeSong(_ songName: String){
         songLabel.text = songName
     }
-    func changeArtist(artistName: String){
+    func changeArtist(_ artistName: String){
         artistLabel.text = "artist: " + artistName
     }
-    func changeAlbum(albumName: String){
+    func changeAlbum(_ albumName: String){
         albumLabel.text = "album: " + albumName
     }
-    func changeTime(timeName: String){
+    func changeTime(_ timeName: String){
         timeLabel.text = timeName
     }
     

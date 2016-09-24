@@ -31,13 +31,13 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         playMgr.plays.removeAll()
         
         let myURLString = "http://www.wmua.org"
-        guard let myURL = NSURL(string: myURLString) else {
+        guard let myURL = URL(string: myURLString) else {
             print("Error: \(myURLString) doesn't seem to be a valid URL")
             return
         }
         var pageInfo: String = "something's wrong, but not caught";
         do{
-            pageInfo = try String(contentsOfURL: myURL)
+            pageInfo = try String(contentsOf: myURL)
         }catch{
             print("something's wrong!")
         }
@@ -48,40 +48,40 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //AT THIS POINT IN CODE,
         //PAGEINFO VAR HOLDS THE HTML OF THE WEBPAGE
         
-        let cons: NSScanner = NSScanner(string: pageInfo)
+        let cons: Scanner = Scanner(string: pageInfo)
         var numScanned: Int = 0;
         var timeP: NSString?
         var songName: NSString?
         var artistName: NSString?
         var albumName: NSString?
-        let charset: NSCharacterSet = NSCharacterSet(charactersInString: "<td>")
+        let charset: CharacterSet = CharacterSet(charactersIn: "<td>")
         
         
         while(numScanned < 10){
             //this is where I scan the information from the website HTML
             //if the code of the website changes, this will break
-            cons.scanUpToString("<td>", intoString: nil)
-            cons.scanCharactersFromSet(charset, intoString: nil)
-            cons.scanUpToString("</td>", intoString: &timeP)
+            cons.scanUpTo("<td>", into: nil)
+            cons.scanCharacters(from: charset, into: nil)
+            cons.scanUpTo("</td>", into: &timeP)
             
-            cons.scanUpToString("<td>", intoString: nil)
-            cons.scanCharactersFromSet(charset, intoString: nil)
-            cons.scanUpToString("</td>", intoString: &artistName)
-            
-            
-            cons.scanUpToString("<td>", intoString: nil)
-            cons.scanCharactersFromSet(charset, intoString: nil)
-            cons.scanUpToString("</td>", intoString: &songName)
-            
-            cons.scanUpToString("<td>", intoString: nil)
-            cons.scanCharactersFromSet(charset, intoString: nil)
-            cons.scanUpToString("</td>", intoString: &albumName)
+            cons.scanUpTo("<td>", into: nil)
+            cons.scanCharacters(from: charset, into: nil)
+            cons.scanUpTo("</td>", into: &artistName)
             
             
-            let timePlayed = timeP?.substringFromIndex(0)
-            var songN = songName?.substringFromIndex(0)
-            var artistN = artistName?.substringFromIndex(0)
-            var albumN = albumName?.substringFromIndex(0)
+            cons.scanUpTo("<td>", into: nil)
+            cons.scanCharacters(from: charset, into: nil)
+            cons.scanUpTo("</td>", into: &songName)
+            
+            cons.scanUpTo("<td>", into: nil)
+            cons.scanCharacters(from: charset, into: nil)
+            cons.scanUpTo("</td>", into: &albumName)
+            
+            
+            let timePlayed = timeP?.substring(from: 0)
+            var songN = songName?.substring(from: 0)
+            var artistN = artistName?.substring(from: 0)
+            var albumN = albumName?.substring(from: 0)
             //            print(timePlayed!)
             //            print(artistN!)
             //            print(songName!)
@@ -105,17 +105,17 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
             songN?.removeAtIndex(songN!.startIndex.advancedBy(save+4));
             */
             
-            songN = songN?.stringByReplacingOccurrencesOfString("&#39;", withString: "'");
-            artistN = artistN?.stringByReplacingOccurrencesOfString("&#39;", withString: "'");
-            albumN = albumN?.stringByReplacingOccurrencesOfString("&#39;", withString: "'");
+            songN = songN?.replacingOccurrences(of: "&#39;", with: "'");
+            artistN = artistN?.replacingOccurrences(of: "&#39;", with: "'");
+            albumN = albumN?.replacingOccurrences(of: "&#39;", with: "'");
             
-            songN = songN?.stringByReplacingOccurrencesOfString("&amp;", withString: "&");
-            artistN = artistN?.stringByReplacingOccurrencesOfString("&amp;", withString: "&");
-            albumN = albumN?.stringByReplacingOccurrencesOfString("&amp;", withString: "&");
+            songN = songN?.replacingOccurrences(of: "&amp;", with: "&");
+            artistN = artistN?.replacingOccurrences(of: "&amp;", with: "&");
+            albumN = albumN?.replacingOccurrences(of: "&amp;", with: "&");
         
-            songN = songN?.stringByReplacingOccurrencesOfString("&quot;", withString: "\"");
-            artistN = artistN?.stringByReplacingOccurrencesOfString("&quot;", withString: "\"");
-            albumN = albumN?.stringByReplacingOccurrencesOfString("&quot;", withString: "\"");
+            songN = songN?.replacingOccurrences(of: "&quot;", with: "\"");
+            artistN = artistN?.replacingOccurrences(of: "&quot;", with: "\"");
+            albumN = albumN?.replacingOccurrences(of: "&quot;", with: "\"");
             
             /*
             let apostropheSet: NSCharacterSet = NSCharacterSet(charactersInString: "&#39;");
@@ -158,14 +158,14 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return playMgr.plays.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("PlayCell", forIndexPath: indexPath) as! PlayCell
-        let tasker: play = playMgr.plays[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlayCell", for: indexPath) as! PlayCell
+        let tasker: play = playMgr.plays[(indexPath as NSIndexPath).row]
         cell.changeSong(tasker.title)
         cell.changeTime(tasker.timeD)
         cell.changeAlbum(tasker.album)
@@ -174,7 +174,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
 
-    @IBAction func refreshPressed(sender: UIBarButtonItem) {
+    @IBAction func refreshPressed(_ sender: UIBarButtonItem) {
         makeTab()
         tblV.reloadData()
     }
