@@ -17,6 +17,7 @@ class FirstViewController: UIViewController {
     
     @IBOutlet weak var showLabel: UILabel!
     @IBOutlet weak var DJLabel: UILabel!
+    @IBOutlet weak var descLabel: UILabel!
     
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     
@@ -280,7 +281,7 @@ class FirstViewController: UIViewController {
         }
         var pageInfo: String = "something's wrong, but not caught";
         do{
-            pageInfo = try String(contentsOf: myURL)
+            pageInfo = try String(contentsOf: myURL, encoding:String.Encoding.utf8)
         }catch{
             print("something's wrong!")
         }
@@ -290,13 +291,16 @@ class FirstViewController: UIViewController {
         var showTitle: NSString?
         var DJTitle: NSString?
         var testForRadioactivityDown: NSString?
+        var showDescription: NSString?
         
         ///show.html?showoid
         
         var showN: String;
         var djN: String;
+        var showD: String;
         
         cons.scanUpTo("td colspan", into: nil)
+        /* this is old (website was changed):
         cons.scanUpTo("http://WMUA.radioactivity.fm", into: nil)
         cons.scanUpTo("\">", into: &testForRadioactivityDown)
         cons.scanCharacters(from: charset, into: nil)
@@ -304,19 +308,36 @@ class FirstViewController: UIViewController {
         cons.scanUpTo("</i>", into: nil)
         cons.scanCharacters(from: charset, into: nil)
         cons.scanUpTo("</td>", into: &DJTitle)
+         */
+        cons.scanUpTo("\">", into: nil)
+        cons.scanCharacters(from: charset, into: nil)
+        cons.scanUpTo("\">", into: nil)
+        cons.scanCharacters(from: charset, into: nil)
+        cons.scanUpTo("</a>", into: &showTitle)
+        cons.scanUpTo("</i>", into: nil)
+        cons.scanCharacters(from: charset, into: nil)
+        cons.scanUpTo("</td>", into: &DJTitle)
+        cons.scanUpTo("<i>", into: nil)
+        cons.scanCharacters(from: charset, into: nil)
+        cons.scanUpTo("</i>", into: &showDescription)
         
+        /*
         if((testForRadioactivityDown?.isEqual(to: "http://wmua.radioactivity.fm")) == nil){
             showN = "Radioactivity is down!"
             djN = "Sorry, please check back later."
         }
         else{
+ */
         showN = showTitle!.substring(from: 0);
         djN = "with " + (DJTitle?.substring(from: 0))!;
+        showD = showDescription!.substring(from: 0)
             showN = showN.replacingOccurrences(of: "&#39;", with: "'");
             djN = djN.replacingOccurrences(of: "&#39;", with: "'");
             showN = showN.replacingOccurrences(of: "&amp;", with: "&");
             djN = djN.replacingOccurrences(of: "&amp;", with: "&");
-        }
+            showD = showD.replacingOccurrences(of: "&amp;", with: "&");
+            showD = showD.replacingOccurrences(of: "&#39;", with: "'");
+        //}
         
         /*
          
@@ -345,6 +366,7 @@ class FirstViewController: UIViewController {
         
         showLabel.text = showN;
         DJLabel.text = djN;
+        descLabel.text = showD;
         
     }
 
