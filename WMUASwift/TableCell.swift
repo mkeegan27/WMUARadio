@@ -19,6 +19,7 @@ class TableCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         djLabel?.adjustsFontSizeToFitWidth = true
+        showLabel?.adjustsFontSizeToFitWidth = true
         // Initialization code
     }
     

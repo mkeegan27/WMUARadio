@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Foundation
+import SystemConfiguration
 
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -19,14 +21,42 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //        let url = NSURL (string: "http://www.wmua.org");
 //        let requestObj = NSURLRequest(URL: url!);
 //        webView.loadRequest(requestObj);
+        if(isInternetAvailable()){
         makeTab()
-        
+        }
+        else{
+            playMgr.plays.removeAll()
+            playMgr.addP(play(timeD: "", title: "No internet connection", artist: "", album: ""))
+            tblV.reloadData()
+        }
         
         
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    func isInternetAvailable() -> Bool
+    {
+        var zeroAddress = sockaddr_in()
+        zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+        
+        let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
+                SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+            }
+        }
+        
+        var flags = SCNetworkReachabilityFlags()
+        if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
+            return false
+        }
+        let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
+        let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
+        return (isReachable && !needsConnection)
+    }
+    
     func makeTab(){
+        
         
         playMgr.plays.removeAll()
         
@@ -175,7 +205,13 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     @IBAction func refreshPressed(_ sender: UIBarButtonItem) {
+        if(isInternetAvailable()){
         makeTab()
+        }
+        else{
+            playMgr.plays.removeAll()
+            playMgr.addP(play(timeD: "", title: "No internet connection", artist: "", album: ""))
+        }
         tblV.reloadData()
     }
 
