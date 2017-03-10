@@ -72,15 +72,18 @@ class FirstViewController: UIViewController {
         stopButton.layer.borderWidth = 1
         stopButton.layer.borderColor = UIColor.init(red: 154/255, green: 47/255, blue: 50/255, alpha: 1.0).cgColor
         //setupPlayer()
-        UIApplication.shared.beginReceivingRemoteControlEvents()
+        
         
         if(!isInternetAvailable()){
             listenLiveButton.isHidden = true
             stopButton.isHidden = true
         }
+        else{
+            UIApplication.shared.beginReceivingRemoteControlEvents()
+        }
         
         
-        //2016 SPRING SCHEDULE:
+        //2017 SPRING SCHEDULE:
         
         //sunday shows:
         let show0: Show = Show(host: "Chuck Tunes", name: "God Play the Queen", day: "Sunday", time: "Midnight - 2am")
@@ -405,6 +408,7 @@ class FirstViewController: UIViewController {
         showLabel.text = showN;
         DJLabel.text = djN;
         descLabel.text = showD;
+            UIApplication.shared.beginReceivingRemoteControlEvents()
         }
         else{
             showLabel.text = "No internet connection";
