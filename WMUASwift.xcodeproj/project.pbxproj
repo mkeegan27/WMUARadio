@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F65B23A1E783F21005F489B /* MarqueeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F65B2391E783F21005F489B /* MarqueeLabel.swift */; };
 		1F70670D1CAC700300EF8588 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70670C1CAC700300EF8588 /* AppDelegate.swift */; };
 		1F70670F1CAC700300EF8588 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70670E1CAC700300EF8588 /* FirstViewController.swift */; };
 		1F7067111CAC700300EF8588 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7067101CAC700300EF8588 /* SecondViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F65B2391E783F21005F489B /* MarqueeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarqueeLabel.swift; sourceTree = "<group>"; };
 		1F7067091CAC700300EF8588 /* WMUASwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WMUASwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F70670C1CAC700300EF8588 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F70670E1CAC700300EF8588 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				1F7067151CAC700300EF8588 /* Assets.xcassets */,
 				1F7067171CAC700300EF8588 /* LaunchScreen.storyboard */,
 				1F70671A1CAC700300EF8588 /* Info.plist */,
+				1F65B2391E783F21005F489B /* MarqueeLabel.swift */,
 			);
 			path = WMUASwift;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			files = (
 				1FB690F21CAD80AD00B5DE62 /* PlaysManager.swift in Sources */,
 				1F842A7A1CACBE2E00D8381E /* TableCell.swift in Sources */,
+				1F65B23A1E783F21005F489B /* MarqueeLabel.swift in Sources */,
 				1F842A761CACB6CB00D8381E /* ScheduleManager.swift in Sources */,
 				1F842A781CACBDAF00D8381E /* ThirdViewController.swift in Sources */,
 				1F7067211CAC83F800EF8588 /* FourthViewController.swift in Sources */,

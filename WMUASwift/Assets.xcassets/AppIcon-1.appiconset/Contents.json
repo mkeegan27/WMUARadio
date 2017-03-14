@@ -13,23 +13,25 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "wmua-120.png",
+      "filename" : "wmua-58.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "wmua-87.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "wmua-120-1.png",
+      "filename" : "wmua-81.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "wmua-120-1.png",
       "scale" : "3x"
     },
     {

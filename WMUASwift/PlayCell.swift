@@ -10,15 +10,16 @@ import UIKit
 
 class PlayCell: UITableViewCell {
     
-    @IBOutlet weak var songLabel: UILabel!
-    @IBOutlet weak var artistLabel: UILabel!
-    @IBOutlet weak var albumLabel: UILabel!
+    @IBOutlet weak var songLabel: MarqueeLabel!
+    @IBOutlet weak var artistLabel: MarqueeLabel!
+    @IBOutlet weak var albumLabel: MarqueeLabel!
     @IBOutlet weak var timeLabel: UILabel!
     
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
     
     override func prepareForReuse(){
@@ -28,12 +29,25 @@ class PlayCell: UITableViewCell {
     
     func changeSong(_ songName: String){
         songLabel.text = songName
+        songLabel.type = .continuous
+        songLabel.speed = .rate(80)
+        songLabel.fadeLength = 80.0
+        songLabel.labelWillBeginScroll()
     }
     func changeArtist(_ artistName: String){
-        artistLabel.text = "artist: " + artistName
+        artistLabel.text = artistName
+        artistLabel.type = .continuous
+        artistLabel.speed = .rate(80)
+        artistLabel.fadeLength = 80.0
+        artistLabel.labelWillBeginScroll()
     }
     func changeAlbum(_ albumName: String){
-        albumLabel.text = "album: " + albumName
+        albumLabel.text = albumName
+        albumLabel.type = .continuous
+        albumLabel.speed = .rate(80)
+        albumLabel.fadeLength = 80.0
+        albumLabel.labelWillBeginScroll()
+
     }
     func changeTime(_ timeName: String){
         timeLabel.text = timeName

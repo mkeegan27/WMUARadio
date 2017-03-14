@@ -327,11 +327,13 @@ class FirstViewController: UIViewController {
             print("something's wrong!")
         }
         let cons: Scanner = Scanner(string: pageInfo)
-        let charset: CharacterSet = CharacterSet(charactersIn: "\"</i>")
+        let charset: CharacterSet = CharacterSet(charactersIn: "\"</i")
+            let charset2: CharacterSet = CharacterSet(charactersIn: ">")
+            let showinfoset: CharacterSet = CharacterSet(charactersIn: "showinfo\"")
+
         
         var showTitle: NSString?
         var DJTitle: NSString?
-        var testForRadioactivityDown: NSString?
         var showDescription: NSString?
         
         ///show.html?showoid
@@ -352,15 +354,19 @@ class FirstViewController: UIViewController {
          */
         cons.scanUpTo("\">", into: nil)
         cons.scanCharacters(from: charset, into: nil)
+        cons.scanCharacters(from: charset2, into: nil)
         cons.scanUpTo("\">", into: nil)
         cons.scanCharacters(from: charset, into: nil)
+        cons.scanCharacters(from: charset2, into: nil)
         cons.scanUpTo("</a>", into: &showTitle)
         cons.scanUpTo("</i>", into: nil)
         cons.scanCharacters(from: charset, into: nil)
+        cons.scanCharacters(from: charset2, into: nil)
         cons.scanUpTo("</td>", into: &DJTitle)
-        cons.scanUpTo("<i>", into: nil)
-        cons.scanCharacters(from: charset, into: nil)
-        cons.scanUpTo("</i>", into: &showDescription)
+        cons.scanUpTo("showinfo\">", into: nil)
+        cons.scanCharacters(from: showinfoset, into: nil)
+        cons.scanCharacters(from: charset2, into: nil)
+        cons.scanUpTo("</span>", into: &showDescription)
         
         /*
         if((testForRadioactivityDown?.isEqual(to: "http://wmua.radioactivity.fm")) == nil){
@@ -371,13 +377,19 @@ class FirstViewController: UIViewController {
  */
         showN = showTitle!.substring(from: 0);
         djN = "with " + (DJTitle?.substring(from: 0))!;
-        showD = showDescription!.substring(from: 0)
-            showN = showN.replacingOccurrences(of: "&#39;", with: "'");
-            djN = djN.replacingOccurrences(of: "&#39;", with: "'");
-            showN = showN.replacingOccurrences(of: "&amp;", with: "&");
-            djN = djN.replacingOccurrences(of: "&amp;", with: "&");
-            showD = showD.replacingOccurrences(of: "&amp;", with: "&");
-            showD = showD.replacingOccurrences(of: "&#39;", with: "'");
+            if(showDescription == nil){
+                showD = "No show info available!";
+            }
+            else{
+                showD = showDescription!.substring(from: 0)
+                showN = showN.replacingOccurrences(of: "&#39;", with: "'");
+                djN = djN.replacingOccurrences(of: "&#39;", with: "'");
+                showN = showN.replacingOccurrences(of: "&amp;", with: "&");
+                djN = djN.replacingOccurrences(of: "&amp;", with: "&");
+                showD = showD.replacingOccurrences(of: "&amp;", with: "&");
+                showD = showD.replacingOccurrences(of: "&#39;", with: "'");
+            }
+
         //}
         
         /*
@@ -391,12 +403,12 @@ class FirstViewController: UIViewController {
          
          and when it is not:
          
-         <tr>
-         <td colspan="2"><a href="http://WMUA.radioactivity.fm/show.html?showoid=8618">Let&#39;s Be Blunt with Robert Hunt</a><br \><i>with</i> Robert Hunt</td>
-         
-         <td colspan="2"><span id="showinfo">The show is an eclectic mix of music and talk, mixing music from all different genres with interesting conversations regarding campus life. Each show includes an interview with a guest from an organization around campus, the rest covers a variety of different music. </span></td>
-         
-         </tr>
+             <tr>
+             <td colspan="2"><a href="">iCon (International Content)</a><br \><i>with</i> Matt Butler</td>
+             
+             <td id="showinfo" colspan="2"><i>No Show Info Available!</i></td>
+             
+             </tr>
          
          */
         
