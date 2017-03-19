@@ -179,8 +179,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="383" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARTIST NAME ARTIST NAME " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aY-NJ-oq4" customClass="MarqueeLabel" customModule="WMUASwift" customModuleProvider="target">
-                                                    <rect key="frame" x="56" y="44.5" width="266" height="33"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" verticalHuggingPriority="251" text="ARTIST NAME ARTIST NAME " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aY-NJ-oq4" customClass="MarqueeLabel" customModule="WMUASwift" customModuleProvider="target">
+                                                    <rect key="frame" x="56" y="44.5" width="250.5" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -192,9 +192,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME TIME" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLa-zG-HAI">
-                                                    <rect key="frame" x="330" y="46" width="45" height="32.5"/>
+                                                    <rect key="frame" x="314.5" y="46" width="60.5" height="32"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="45" id="euV-n4-rGz"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="iJY-Za-f2D"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

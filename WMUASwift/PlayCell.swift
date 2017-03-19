@@ -30,21 +30,21 @@ class PlayCell: UITableViewCell {
     func changeSong(_ songName: String){
         songLabel.text = songName
         songLabel.type = .continuous
-        songLabel.speed = .rate(80)
+        songLabel.speed = .rate(70)
         songLabel.fadeLength = 80.0
         songLabel.labelWillBeginScroll()
     }
     func changeArtist(_ artistName: String){
         artistLabel.text = artistName
         artistLabel.type = .continuous
-        artistLabel.speed = .rate(80)
+        artistLabel.speed = .rate(70)
         artistLabel.fadeLength = 80.0
         artistLabel.labelWillBeginScroll()
     }
     func changeAlbum(_ albumName: String){
         albumLabel.text = albumName
         albumLabel.type = .continuous
-        albumLabel.speed = .rate(80)
+        albumLabel.speed = .rate(70)
         albumLabel.fadeLength = 80.0
         albumLabel.labelWillBeginScroll()
 

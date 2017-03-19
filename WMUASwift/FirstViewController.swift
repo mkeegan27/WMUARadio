@@ -379,16 +379,15 @@ class FirstViewController: UIViewController {
         djN = "with " + (DJTitle?.substring(from: 0))!;
             if(showDescription == nil){
                 showD = "No show info available!";
-            }
-            else{
+            }else{
                 showD = showDescription!.substring(from: 0)
+            }
                 showN = showN.replacingOccurrences(of: "&#39;", with: "'");
                 djN = djN.replacingOccurrences(of: "&#39;", with: "'");
                 showN = showN.replacingOccurrences(of: "&amp;", with: "&");
                 djN = djN.replacingOccurrences(of: "&amp;", with: "&");
                 showD = showD.replacingOccurrences(of: "&amp;", with: "&");
                 showD = showD.replacingOccurrences(of: "&#39;", with: "'");
-            }
 
         //}
         
